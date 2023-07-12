@@ -1,0 +1,263 @@
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.small-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 18px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 60px;
+  margin-top: 20px;
+}
+
+.card {
+  width: 100%;
+  padding: 40px;
+  position: relative;
+  border-radius: 10px;
+  background-image: url('../../assets/back.jpg');
+  background-size: cover;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.selected {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+}
+.card:hover {
+  transform: scale(1.03);
+  border: 2px solid #007bff; /* Blue border */
+}
+/* Existing CSS styles */
+
+/* Drag and drop styles */
+.cdk-drag-preview {
+  transform: scale(1.03); /* Add a slight zoom effect to the dragged card */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow effect to the dragged card */
+}
+
+/* Add this block to enable the fluid drag effect */
+.cdk-drag-preview.card {
+  will-change: transform; /* Enable GPU acceleration for smoother dragging */
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.3; /* Reduce the opacity of the placeholder */
+  transition: opacity 0.3s ease;
+}
+
+.cdk-drag-preview,
+.cdk-drag-placeholder {
+  transform-origin: center center;
+}
+.cdk-drag-placeholder.card {
+  opacity: 0.3; /* Reduce the opacity to 30% */
+  transition: opacity 0.3s ease;
+}
+
+.card.cdk-drag-placeholder {
+  visibility: hidden;
+}
+
+.card-transition {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.cdk-drag-preview {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Rest of the CSS styles */
+
+.user-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.user-details label {
+  font-weight: bold;
+}
+
+.user-details input {
+  width: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.delete-button {
+  padding: 6px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #007bff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.delete-highlight {
+  border: 2px solid red;
+}
+.empty-message {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 576px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+.small-button {
+  color: #fff; 
+  background-color: #007bff; 
+  border-color: #007bff;
+}
+
+.save-button {
+  background-color: #4E982A;
+  border-color: #4E982A; 
+}
+
+.cancel-button {
+  background-color: #D63333; 
+  border-color: #D63333; 
+}
+
+.load-button {
+  background-color: #F1C232;
+  border-color: #F1C232; 
+}
+
+.delete-button-container {
+  position: absolute;
+  top: -7px;
+  right: 7px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #dc3545; 
+}
+
+
+.card.highlighted {
+  animation: blink 1s infinite;
+  border: 2px solid #4E982A;
+}
+
+
+
+.card.blink {
+  animation: blink 1s infinite;
+}
+
+
+.new-card-added {
+  border: 2px solid green;
+}
+
+.drag-axis-locked {
+  touch-action: none;
+  pointer-events: none;
+}
+
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #4E982A;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+.card.delete-highlight {
+  border: 2px solid red;
+  animation: borderPulse 1s infinite;
+}
+
+@keyframes borderPulse {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: red;
+  }
+}
+.card.blink-green {
+  border-color: green !important;
+}
+
+
+.spinner {
+  margin-right: 5px;
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-spin {
+  animation: fa-spin 1s infinite linear;
+}
+@keyframes cancelHighlight {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: red;
+  }
+}
+
+.card.cancel-highlight {
+  animation: cancelHighlight 1s infinite;
+}

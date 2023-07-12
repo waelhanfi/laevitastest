@@ -1,0 +1,10 @@
+<div class="app-container custom-bg">
+  <div class="sidebar-container" *ngIf="showSidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-container">
+    <app-user-form (newCardAdded)="userList.onNewCardAdded()"></app-user-form>
+    <app-user-list #userList [newCardAdded]="userList.newCardIndex !== null"></app-user-list>
+  </div>
+  
+</div>

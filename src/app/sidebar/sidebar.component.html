@@ -1,0 +1,20 @@
+<div class="sidebar" *ngIf="selectedUser">
+  <div class="card">
+    <div class="card-body">
+      <div class="contact-info">
+        <div class="form-group">
+          <label for="name">Nom:</label>
+          <input type="text" id="name" [(ngModel)]="selectedUser.name" style="color: rgb(0, 0, 0);" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="surname">Prénom:</label>
+          <input type="text" id="surname" [(ngModel)]="selectedUser.surname" style="color: rgb(0, 0, 0);" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="years">Années d'expérience:</label>
+          <span style="color: rgb(0, 0, 0);">{{ selectedUser.years }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="card">
+  <form (ngSubmit)="submitForm()" #userForm="ngForm">
+    <div class="row">
+      <div class="col">
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="user.name" class="form-control" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="surname">Prénom:</label>
+        <input type="text" id="surname" name="surname" [(ngModel)]="user.surname" class="form-control" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="years">Années d'expérience:</label>
+        <input type="number" id="years" name="years" [(ngModel)]="user.years" class="form-control" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-primary">
+          <span *ngIf="!savingInProgress">Enregistrer</span>
+          <span *ngIf="savingInProgress">
+            <i class="fas fa-spinner fa-spin"></i> Enregistrement en cours...
+          </span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
